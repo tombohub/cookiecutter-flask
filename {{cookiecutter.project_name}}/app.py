@@ -10,3 +10,7 @@ app = Flask(__name__)
 csrf = CSRFProtect()
 app.config["SECRET_KEY"] = os.getenv("FLASK_SECRET_KEY")
 csrf.init_app(app)
+
+@app.get("/")
+def home():
+    return render_template("home.html")
